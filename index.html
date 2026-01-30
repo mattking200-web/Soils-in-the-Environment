@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Why Soil is Important - Grade 3 Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --soil-brown: #8B4513;
+            --light-brown: #D2691E;
+            --soil-dark: #5C3317;
+            --grass-green: #7CB342;
+            --sky-blue: #87CEEB;
+            --orange: #FF8C42;
+            --warm-beige: #F5E6D3;
+            --shadow: rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(to bottom, var(--sky-blue) 0%, var(--warm-beige) 40%);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Decorative ground layer */
+        body::before {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to bottom, 
+                var(--soil-brown) 0%, 
+                var(--soil-brown) 40%,
+                var(--soil-dark) 100%);
+            z-index: -1;
+            border-top: 8px solid var(--grass-green);
+        }
+
+        /* Grass decoration */
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 150px;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 10px,
+                var(--grass-green) 10px,
+                var(--grass-green) 12px
+            );
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 10px 40px var(--shadow);
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--orange) 0%, var(--light-brown) 100%);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '🌱';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.2;
+            top: -20px;
+            right: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .unit-number {
+            background: var(--soil-dark);
+            color: var(--orange);
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Content sections */
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--warm-beige);
+            border-radius: 20px;
+            border: 4px solid var(--light-brown);
+        }
+
+        h2 {
+            font-family: 'Fredoka', sans-serif;
+            color: var(--soil-dark);
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h2::before {
+            content: '🌍';
+            font-size: 1.2em;
+        }
+
+        .content-block {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 6px solid var(--orange);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .read-aloud {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .read-aloud:hover {
+            background: var(--light-brown);
+            transform: scale(1.05);
+        }
+
+        .read-aloud:active {
+            transform: scale(0.95);
+        }
+
+        .content-block p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .content-block strong {
+            color: var(--soil-dark);
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #FFF8DC;
+            border: 3px dashed var(--grass-green);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .example-box h3 {
+            color: var(--grass-green);
+            font-family: 'Fredoka', sans-serif;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .example-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .example-list li {
+            padding: 10px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 10px;
+            padding-left: 40px;
+            position: relative;
+            font-size: 1.1em;
+        }
+
+        .example-list li::before {
+            position: absolute;
+            left: 10px;
+            font-size: 1.3em;
+        }
+
+        .example-list li:nth-child(1)::before { content: '🌾'; }
+        .example-list li:nth-child(2)::before { content: '🏡'; }
+        .example-list li:nth-child(3)::before { content: '💧'; }
+        .example-list li:nth-child(4)::before { content: '🐛'; }
+        .example-list li:nth-child(5)::before { content: '🌳'; }
+
+        /* Drag and Drop Activity */
+        .drag-drop-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .drag-items {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            min-height: 300px;
+        }
+
+        .drag-items h3 {
+            color: var(--soil-dark);
+            margin-bottom: 15px;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .draggable-item {
+            background: linear-gradient(135deg, var(--orange), var(--light-brown));
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 12px;
+            cursor: move;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .draggable-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .draggable-item.dragging {
+            opacity: 0.5;
+        }
+
+        .drop-zones {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .drop-zone {
+            background: #E8F5E9;
+            border: 3px dashed var(--grass-green);
+            padding: 20px;
+            border-radius: 15px;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .drop-zone.drag-over {
+            background: #C8E6C9;
+            border-color: var(--soil-dark);
+            transform: scale(1.02);
+        }
+
+        .drop-zone-label {
+            font-weight: bold;
+            color: var(--grass-green);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .check-button {
+            background: var(--grass-green);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .check-button:hover {
+            background: #689F38;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #C8E6C9;
+            color: #2E7D32;
+            border: 3px solid #4CAF50;
+        }
+
+        .feedback.incorrect {
+            background: #FFCDD2;
+            color: #C62828;
+            border: 3px solid #F44336;
+        }
+
+        /* Fill in the Blank */
+        .fill-blank-question {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 15px;
+            border-left: 5px solid var(--orange);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .fill-blank-question p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .blank-input {
+            background: #FFF8DC;
+            border: 2px solid var(--light-brown);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-family: 'Comic Neue', cursive;
+            min-width: 150px;
+            transition: all 0.3s;
+        }
+
+        .blank-input:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.2);
+        }
+
+        .blank-input.correct {
+            background: #C8E6C9;
+            border-color: #4CAF50;
+        }
+
+        .blank-input.incorrect {
+            background: #FFCDD2;
+            border-color: #F44336;
+        }
+
+        /* Quiz Questions */
+        .quiz-question {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border: 3px solid var(--light-brown);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-question h4 {
+            color: var(--soil-dark);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quiz-option {
+            background: var(--warm-beige);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+
+        .quiz-option:hover {
+            background: #FFE4B5;
+            border-color: var(--orange);
+        }
+
+        .quiz-option.selected {
+            background: var(--orange);
+            color: white;
+            border-color: var(--soil-dark);
+        }
+
+        .quiz-option.correct {
+            background: #C8E6C9;
+            border-color: #4CAF50;
+            color: #2E7D32;
+        }
+
+        .quiz-option.incorrect {
+            background: #FFCDD2;
+            border-color: #F44336;
+            color: #C62828;
+        }
+
+        /* Score display */
+        .score-display {
+            background: linear-gradient(135deg, var(--grass-green), #558B2F);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+
+        /* Progress indicator */
+        .progress-bar {
+            background: #E0E0E0;
+            height: 10px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, var(--grass-green), var(--orange));
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="unit-number">Unit 1: E1.1</div>
+            <h1>Why Soil is Important for Our World</h1>
+        </header>
+
+        <div class="section">
+            <h2>What is Soil and Why Do We Need It?</h2>
+            
+            <div class="content-block">
+                <button class="read-aloud" onclick="readAloud(this)">🔊 Read Aloud</button>
+                <p><strong>Soil</strong> is the top layer of the Earth where plants grow. It might look like just dirt, but soil is actually one of the most important things on our planet! Without healthy soil, we wouldn't have food to eat, clean air to breathe, or beautiful plants and trees around us.</p>
+                <p>Soil is made up of tiny pieces of rock, dead plants and animals, water, air, and millions of living creatures that are too small to see. All of these parts work together to make soil a special home for plants and animals.</p>
+            </div>
+
+            <div class="content-block">
+                <button class="read-aloud" onclick="readAloud(this)">🔊 Read Aloud</button>
+                <p><strong>Society</strong> means all the people living together in communities, towns, and cities. Soil is super important for society because it helps us grow the <strong>food</strong> we eat every day. Farmers use soil to grow vegetables like carrots and tomatoes, grains like wheat for bread, and fruits like apples and strawberries.</p>
+                <p>Soil also gives us a place to build our homes, schools, and parks. Many things we use come from soil, like cotton for our clothes and wood from trees that grow in soil.</p>
+            </div>
+
+            <div class="content-block">
+                <button class="read-aloud" onclick="readAloud(this)">🔊 Read Aloud</button>
+                <p>The <strong>environment</strong> means all the natural things around us including plants, animals, air, water, and land. Soil is extremely important for the environment because it helps plants grow, and plants give us <strong>oxygen</strong> to breathe. Plants also provide homes and food for animals like birds, rabbits, and insects.</p>
+                <p>Healthy soil acts like a big sponge that soaks up rainwater. This helps prevent <strong>flooding</strong> and keeps our water clean by filtering out dirt and harmful things before the water goes into rivers and lakes.</p>
+            </div>
+
+            <div class="example-box">
+                <h3>🌟 5 Important Ways Soil Helps Us:</h3>
+                <ul class="example-list">
+                    <li><strong>Growing Food:</strong> All our fruits, vegetables, and grains grow in soil</li>
+                    <li><strong>Building Homes:</strong> We build houses, schools, and playgrounds on soil</li>
+                    <li><strong>Cleaning Water:</strong> Soil filters rainwater to make it clean</li>
+                    <li><strong>Home for Animals:</strong> Worms, beetles, and other creatures live in soil</li>
+                    <li><strong>Growing Trees:</strong> Trees grow in soil and give us oxygen to breathe</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Drag and Drop Activity</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Match each benefit of soil to the correct category: Society or Environment!</p>
+            
+            <div class="drag-drop-area">
+                <div class="drag-items">
+                    <h3>Drag these items:</h3>
+                    <div class="draggable-item" draggable="true" data-category="society">Grows food for people</div>
+                    <div class="draggable-item" draggable="true" data-category="environment">Provides oxygen through plants</div>
+                    <div class="draggable-item" draggable="true" data-category="society">Place to build homes</div>
+                    <div class="draggable-item" draggable="true" data-category="environment">Home for worms and insects</div>
+                    <div class="draggable-item" draggable="true" data-category="environment">Filters and cleans water</div>
+                    <div class="draggable-item" draggable="true" data-category="society">Grows cotton for clothes</div>
+                </div>
+                
+                <div class="drop-zones">
+                    <div class="drop-zone" data-category="society">
+                        <div class="drop-zone-label">👥 For Society (People)</div>
+                    </div>
+                    <div class="drop-zone" data-category="environment">
+                        <div class="drop-zone-label">🌍 For Environment (Nature)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="check-button" onclick="checkDragDrop()">Check My Answers!</button>
+            <div class="feedback" id="dragDropFeedback"></div>
+        </div>
+
+        <div class="section">
+            <h2>✏️ Fill in the Blanks</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Read the sentences and fill in the missing words. The answers are in the text above!</p>
+            
+            <div class="fill-blank-question">
+                <p>1. <strong>Soil</strong> is the top layer of the Earth where <input type="text" class="blank-input" data-answer="plants" placeholder="______"> grow.</p>
+            </div>
+
+            <div class="fill-blank-question">
+                <p>2. Farmers use soil to grow vegetables, grains, and <input type="text" class="blank-input" data-answer="fruits" placeholder="______"> that we eat.</p>
+            </div>
+
+            <div class="fill-blank-question">
+                <p>3. Healthy soil acts like a big <input type="text" class="blank-input" data-answer="sponge" placeholder="______"> that soaks up rainwater.</p>
+            </div>
+
+            <div class="fill-blank-question">
+                <p>4. Plants that grow in soil give us <input type="text" class="blank-input" data-answer="oxygen" placeholder="______"> to breathe.</p>
+            </div>
+
+            <div class="fill-blank-question">
+                <p>5. Soil provides homes and food for animals like worms, beetles, and <input type="text" class="blank-input" data-answer="insects" placeholder="______">.</p>
+            </div>
+
+            <button class="check-button" onclick="checkFillBlanks()">Check My Answers!</button>
+            <div class="feedback" id="fillBlankFeedback"></div>
+        </div>
+
+        <div class="section">
+            <h2>📝 Quiz Time!</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Choose the best answer for each question.</p>
+
+            <div class="quiz-question">
+                <h4>1. What does "society" mean?</h4>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Only farmers and gardeners</div>
+                    <div class="quiz-option" data-correct="true">All people living together in communities</div>
+                    <div class="quiz-option" data-correct="false">Just animals and plants</div>
+                    <div class="quiz-option" data-correct="false">The ground beneath our feet</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <h4>2. Why is soil important for growing food?</h4>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">It makes food taste better</div>
+                    <div class="quiz-option" data-correct="true">Plants need soil to grow and we eat those plants</div>
+                    <div class="quiz-option" data-correct="false">Food grows better in water</div>
+                    <div class="quiz-option" data-correct="false">Soil is not important for food</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <h4>3. How does soil help the environment?</h4>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">It only helps people</div>
+                    <div class="quiz-option" data-correct="false">It makes the weather warmer</div>
+                    <div class="quiz-option" data-correct="true">It helps plants grow which give us oxygen</div>
+                    <div class="quiz-option" data-correct="false">It doesn't help the environment</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <h4>4. What does soil do with rainwater?</h4>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">It pushes all water away</div>
+                    <div class="quiz-option" data-correct="true">It soaks it up like a sponge and filters it</div>
+                    <div class="quiz-option" data-correct="false">It turns water into air</div>
+                    <div class="quiz-option" data-correct="false">It makes water dirty</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <h4>5. Which of these creatures live in soil?</h4>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Fish and dolphins</div>
+                    <div class="quiz-option" data-correct="true">Worms and beetles</div>
+                    <div class="quiz-option" data-correct="false">Birds and butterflies</div>
+                    <div class="quiz-option" data-correct="false">Sharks and whales</div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkQuiz()">Check My Answers!</button>
+            <div class="score-display" id="quizScore"></div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <script>
+        // Text-to-Speech functionality
+        function readAloud(button) {
+            const textContent = button.parentElement.querySelector('p, ul, ol');
+            const text = textContent ? textContent.innerText : button.parentElement.innerText;
+            
+            if ('speechSynthesis' in window) {
+                // Cancel any ongoing speech
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 0.9;
+                utterance.pitch = 1;
+                utterance.volume = 1;
+                
+                button.textContent = '⏸️ Stop';
+                button.style.background = '#C62828';
+                
+                utterance.onend = function() {
+                    button.textContent = '🔊 Read Aloud';
+                    button.style.background = '';
+                };
+                
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Sorry, your browser doesn\'t support text-to-speech!');
+            }
+        }
+
+        // Drag and Drop functionality
+        let draggedElement = null;
+
+        document.querySelectorAll('.draggable-item').forEach(item => {
+            item.addEventListener('dragstart', function(e) {
+                draggedElement = this;
+                this.classList.add('dragging');
+            });
+
+            item.addEventListener('dragend', function(e) {
+                this.classList.remove('dragging');
+            });
+        });
+
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('drag-over');
+            });
+
+            zone.addEventListener('dragleave', function(e) {
+                this.classList.remove('drag-over');
+            });
+
+            zone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('drag-over');
+                
+                if (draggedElement) {
+                    this.appendChild(draggedElement);
+                    updateProgress();
+                }
+            });
+        });
+
+        function checkDragDrop() {
+            const feedback = document.getElementById('dragDropFeedback');
+            const dropZones = document.querySelectorAll('.drop-zone');
+            let correct = 0;
+            let total = 0;
+
+            dropZones.forEach(zone => {
+                const category = zone.dataset.category;
+                const items = zone.querySelectorAll('.draggable-item');
+                
+                items.forEach(item => {
+                    total++;
+                    if (item.dataset.category === category) {
+                        correct++;
+                        item.style.background = 'linear-gradient(135deg, #4CAF50, #66BB6A)';
+                    } else {
+                        item.style.background = 'linear-gradient(135deg, #F44336, #EF5350)';
+                    }
+                });
+            });
+
+            feedback.style.display = 'block';
+            if (correct === total) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = '🎉 Perfect! You matched everything correctly!';
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = `You got ${correct} out of ${total} correct. Try again!`;
+            }
+            updateProgress();
+        }
+
+        // Fill in the Blanks functionality
+        function checkFillBlanks() {
+            const inputs = document.querySelectorAll('.blank-input');
+            const feedback = document.getElementById('fillBlankFeedback');
+            let correct = 0;
+            let total = inputs.length;
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.remove('incorrect');
+                    input.classList.add('correct');
+                    correct++;
+                } else {
+                    input.classList.remove('correct');
+                    input.classList.add('incorrect');
+                }
+            });
+
+            feedback.style.display = 'block';
+            if (correct === total) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = '🌟 Excellent! All answers are correct!';
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = `You got ${correct} out of ${total} correct. Check the text above for the answers!`;
+            }
+            updateProgress();
+        }
+
+        // Quiz functionality
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const question = this.closest('.quiz-question');
+                question.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                updateProgress();
+            });
+        });
+
+        function checkQuiz() {
+            const questions = document.querySelectorAll('.quiz-question');
+            let correct = 0;
+            let total = questions.length;
+
+            questions.forEach(question => {
+                const options = question.querySelectorAll('.quiz-option');
+                const selected = question.querySelector('.quiz-option.selected');
+                
+                options.forEach(option => {
+                    option.style.pointerEvents = 'none';
+                    if (option.dataset.correct === 'true') {
+                        option.classList.add('correct');
+                    }
+                    if (selected === option && option.dataset.correct === 'false') {
+                        option.classList.add('incorrect');
+                    }
+                });
+
+                if (selected && selected.dataset.correct === 'true') {
+                    correct++;
+                }
+            });
+
+            const scoreDisplay = document.getElementById('quizScore');
+            scoreDisplay.style.display = 'block';
+            const percentage = Math.round((correct / total) * 100);
+            
+            if (percentage === 100) {
+                scoreDisplay.innerHTML = `🏆 Perfect Score! ${correct}/${total} (${percentage}%) - You're a soil expert!`;
+            } else if (percentage >= 80) {
+                scoreDisplay.innerHTML = `⭐ Great Job! ${correct}/${total} (${percentage}%) - Keep it up!`;
+            } else if (percentage >= 60) {
+                scoreDisplay.innerHTML = `👍 Good Try! ${correct}/${total} (${percentage}%) - Review and try again!`;
+            } else {
+                scoreDisplay.innerHTML = `📚 Keep Learning! ${correct}/${total} (${percentage}%) - Read the lesson again!`;
+            }
+            updateProgress();
+        }
+
+        // Progress tracking
+        function updateProgress() {
+            let completed = 0;
+            let total = 3; // 3 activities
+
+            // Check drag and drop
+            const dropZones = document.querySelectorAll('.drop-zone');
+            let dragCompleted = false;
+            dropZones.forEach(zone => {
+                if (zone.querySelectorAll('.draggable-item').length > 0) {
+                    dragCompleted = true;
+                }
+            });
+            if (dragCompleted) completed++;
+
+            // Check fill blanks
+            const blanks = document.querySelectorAll('.blank-input');
+            let blanksCompleted = Array.from(blanks).every(input => input.value.trim() !== '');
+            if (blanksCompleted) completed++;
+
+            // Check quiz
+            const quizAnswered = document.querySelectorAll('.quiz-option.selected').length === 5;
+            if (quizAnswered) completed++;
+
+            const progressFill = document.getElementById('progressFill');
+            const percentage = (completed / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        // Initialize progress on load
+        window.addEventListener('load', updateProgress);
+    </script>
+</body>
+</html>
